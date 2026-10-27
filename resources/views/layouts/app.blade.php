@@ -28,10 +28,19 @@
         <i class="bi bi-send-fill text-xl text-[#cff245]"></i> <span>SendIt</span>
       </a>
       <nav class="hidden md:flex text-sm gap-8">
-        <a href="#" class="underline">Home</a>
-        <a href="#" class="hover:underline">Features</a>
-        <a href="#" class="hover:underline">Pricing</a>
-        <a href="#" class="hover:underline">Blog</a>
+        <a href="{{ route('home') }}" class="underline">Home</a>
+        <a href="{{ route('features') }}" class="hover:underline">Features</a>
+        <a href="{{ route('pricing') }}" class="hover:underline">Pricing</a>
+         <div class="space-x-4">
+        @auth
+            <!-- Widoczne tylko dla ZALOGOWANYCH -->
+            <a href="{{ url('/dashboard') }}" class="text-green-400">Panel Członka</a>
+        @else
+            <!-- Widoczne tylko dla GOŚCI -->
+            <a href="{{ route('login') }}" class="hover:text-blue-400">Login</a>
+            <a href="{{ route('register') }}" class="bg-blue-500 px-4 py-2 rounded text-white hover:bg-blue-600">Registration</a>
+        @endauth
+    </div>
       </nav>
       <a href="" class="text-sm py-1 px-4 border rounded-xl">
         Contact
