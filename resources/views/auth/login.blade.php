@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
 <div>
-    <!-- An unexamined life is not worth living. - Socrates -->
+    <!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
 </div>
+@endsection
